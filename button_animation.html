@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @keyframes moveDownUp {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .animate-box {
+            animation: moveDownUp 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">آقا رضا</div>
+    
+    <!-- Add an audio element with the sound file -->
+    <audio id="audio" src="your_sound_file.mp3"></audio>
+
+    <script>
+        const box = document.getElementById('box');
+        const audio = document.getElementById('audio');
+
+        box.addEventListener('click', () => {
+            // Toggle the animation by adding or removing a CSS class
+            box.classList.toggle('animate-box');
+            
+            // Play the sound
+            audio.play();
+        });
+    </script>
+</body>
+</html>
